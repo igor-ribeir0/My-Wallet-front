@@ -4,7 +4,7 @@ import { Input } from '../../styles/constants/styledComponents.js';
 import { ConfirmButton } from '../../styles/constants/styledComponents.js';
 import logo from '../../assets/imgs/logo.svg';
 import styled from 'styled-components';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {AuthContext} from '../providers/auth.js';
@@ -15,6 +15,7 @@ export default function Login(){
     const navigate = useNavigate();
     const { setToken}  = React.useContext(AuthContext);
     const { setName } = React.useContext(AuthContext);
+    const { setId } = React.useContext(AuthContext);
 
     function login(event){
         event.preventDefault();
@@ -26,6 +27,7 @@ export default function Login(){
 
         promise.then(answer => setToken({token: answer.data.token}));
         promise.then(answer => setName({name: answer.data.name}));
+        promise.then(answer => setId({id: answer.data.id}));
         promise.then(() => navigate('/home'));
         promise.catch((error) => alert(`${error.response.data.message}`));
     };

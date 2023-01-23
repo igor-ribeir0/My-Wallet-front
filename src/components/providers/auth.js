@@ -12,12 +12,17 @@ export const AuthProvider = (props) => {
         name: ''
     });
 
+    const [id, setId] = useState({
+        id: ''
+    });
+
     return(
         <AuthContext.Provider 
             value={
                 { 
                     token, setToken, 
-                    name, setName
+                    name, setName,
+                    id, setId
                 }
             }
         >

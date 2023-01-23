@@ -51,3 +51,21 @@ export const ConfirmButton = styled.button`
     margin-left: 25px;
     margin-bottom: 32px;
 `;
+
+export const Title = styled.h1`
+    width: 141px;
+    height: 31px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-left: 24px;
+    white-space: nowrap;
+`;
+
+export const Exit = styled.img`
+    width: 23px;
+    height: 24px;
+    margin-right: 24px;
+`;
